@@ -61,9 +61,11 @@ unsafe fn run (){
     
     let ret_code = VTCopyVideoEncoderList(opts_ref, &mut result_ref);
 
-    println!("opts: {:?}", CFDictionary::wrap_under_create_rule(opts_ref));
+    let tt:CFDictionary<CFString, CFString> =CFDictionary::wrap_under_create_rule(opts_ref);
+    println!("opts: {:?}", tt);
     println!("ret_code: {:?}", ret_code);
-    println!("result: {:?}", CFArray::wrap_under_create_rule(result_ref));
+    let tt2: CFArray<CFString> = CFArray::wrap_under_create_rule(result_ref);
+    println!("result: {:?}", tt2);
 }
 
 
